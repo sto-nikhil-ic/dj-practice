@@ -2,7 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 
 # Create you views here.
-def index(request, month):
+def number(request,month):
+    return HttpResponse(month)
+def months(request, month):
     text=None
     if month == 'january':
         text=  "this is january"
