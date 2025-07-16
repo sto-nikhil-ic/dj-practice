@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 
 # Create you views here.
 month_data = {
@@ -18,7 +18,11 @@ month_data = {
 }
 
 def number(request,month):
-    return HttpResponse(month)
+    month=month-1 #LSIT 0 DEKHI SURU HUNCHA
+    dicmonth=list(month_data.keys())
+    forward_month=dicmonth[month]
+    
+    return HttpResponseRedirect("/challanges/"+forward_month)
 
 
 def months(request, month):
