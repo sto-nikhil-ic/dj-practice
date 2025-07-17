@@ -33,15 +33,9 @@ month_data = {
 def empty(request):
     list_month=""
     dicmonth=list(month_data.keys())
-    for month in dicmonth:
-        capitalmonth=month.capitalize()
-        month_path=reverse("month-",args=[month])
-        list_month += f"<li><a href=\"{month_path}\">{capitalmonth}</a></li>"
-
-    return HttpResponse(list_month)
-  
-    
-
+    return render(request, "pract/index.html",{
+        "months":dicmonth
+    })
 def number(request,month):
     
     if month>12:

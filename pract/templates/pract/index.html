@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{monthname}}</title>
+    <title>All month</title>
 </head>
 <body>
-    <h1>this  is {{monthname|title}} </h1>
-<p>{{text}}</p>
+    <p>hello</p>
+{% for month in months %}
+    <li><a href="{{month}}">{{month|title}}</a></li>
+    {% endfor %}
+    </ul>
 </body>
 </html>
