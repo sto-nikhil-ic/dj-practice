@@ -17,6 +17,17 @@ month_data = {
     "november": "this is november",
     "december": "this is december"
 }
+def empty(request):
+    list_month=""
+    dicmonth=list(month_data.keys())
+    for month in dicmonth:
+        capitalmonth=month.capitalize()
+        month_path=reverse("month-",args=[month])
+        list_month += f"<li><a href=\"{month_path}\">{capitalmonth}</a></li>"
+
+    return HttpResponse(list_month)
+  
+    
 
 def number(request,month):
     
