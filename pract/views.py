@@ -33,9 +33,10 @@ def number(request,month):
 def months(request, month):
     try:
         text=month_data[month]
+        html=f"<h1>{text}</h1>"
     except:
             return HttpResponse("errror month")
     
-    return HttpResponse(text)
+    return HttpResponse(html)
     
     
